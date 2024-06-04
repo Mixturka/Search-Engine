@@ -66,7 +66,7 @@ class Parser {
   Token Consume(TokenType type, std::string&& message) {
     if (Check(type)) return Advance();
 
-    throw std::runtime_error("NO FUCKING CLOSURE BRACKET IDIOT");
+    throw std::runtime_error("No closure bracket");
   }
 
   Expression* ParseTerm() {
