@@ -20,6 +20,12 @@ indexer /path/to/files /path/where/to/store/database
 
 ## Search Application
 
+Allow user to make search requests throw console input until "EXIT" word entered. On each request it outputs to console most relevant files with line numbers where words specified in request where met
+
+### Example usage
+```bash
+searcher nubmer_of_relevant_files_to_show
+```
 
 ## Searcher Request Syntax
 
