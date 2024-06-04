@@ -91,7 +91,7 @@ class BTree {
 
   void ReadVector(uint64_t offset, std::vector<uint64_t>& res) {
     file_.seekg(offset);
-    if (!file_.is_open()) throw std::runtime_error("BL");
+    if (!file_.is_open()) throw std::runtime_error("Unable to open file");
 
     uint64_t size;
     file_.read(reinterpret_cast<char*>(&size), sizeof(uint64_t));
@@ -117,7 +117,7 @@ class BTree {
   void ReadMainVector(uint64_t offset, std::vector<Data>& res) {
 
     file_.seekg(offset);
-    if (!file_.is_open()) throw std::runtime_error("BL");
+    if (!file_.is_open()) throw std::runtime_error("Unable to open file");
 
     uint64_t size;
     file_.read(reinterpret_cast<char*>(&size), sizeof(uint64_t));
@@ -179,7 +179,7 @@ class BTree {
 
   void ReadString(uint64_t offset, std::string& res) {
     file_.seekg(offset);
-    if (!file_.is_open()) throw std::runtime_error("BL");
+    if (!file_.is_open()) throw std::runtime_error("Unable to open file");
 
     uint64_t size;
     file_.read(reinterpret_cast<char*>(&size), sizeof(uint64_t));
@@ -503,7 +503,7 @@ class BTree {
 
   std::unique_ptr<Node> ReadNode(uint64_t offset) {
     file_.seekg(offset);
-    if (!file_.is_open()) throw std::runtime_error("BL");
+    if (!file_.is_open()) throw std::runtime_error("Unable to open file");
 
     auto res = std::make_unique<Node>();
     uint64_t keys_size;
