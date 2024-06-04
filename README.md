@@ -20,7 +20,7 @@ indexer /path/to/files /path/where/to/store/database
 
 ## Search Application
 
-Allow user to make search requests through console input until "EXIT" word entered. On each request it outputs to console most relevant files with line numbers where words specified in request where met
+Allow the user to perform search queries through console input until the word "EXIT" is entered. For each search request display the most relevant files along with the line numbers where the specified words were found.
 
 ### Example usage
 ```bash
@@ -28,7 +28,6 @@ searcher nubmer_of_relevant_files_to_show
 ```
 
 ## Searcher Request Syntax
-
 
 - Supports parentheses and the logical operators AND and OR (case-sensitive). Queries are logical expressions with words separated by spaces.
 
