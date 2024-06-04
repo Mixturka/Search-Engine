@@ -27,7 +27,7 @@ void DataBase::Load(std::string path) {
   if (fs::is_empty(path)) throw std::runtime_error("Can't load database from empty folder.");
   this->posting_lists_->Load(path + "posting_list.dat");
   this->did_list_->Load(path + "DIDs.dat");
-  std::ifstream meta("/Users/deniv/Documents/labwork11-Mixturka/Base/meta.dat", std::ios::in | std::ios::binary);
+  std::ifstream meta(path + "/meta.dat", std::ios::in | std::ios::binary);
   meta.read(reinterpret_cast<char*>(&this->dl_sum_), sizeof(uint64_t));
   meta.read(reinterpret_cast<char*>(&this->doc_num_), sizeof(uint64_t));
 }
