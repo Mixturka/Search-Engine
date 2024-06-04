@@ -20,7 +20,7 @@ indexer /path/to/files /path/where/to/store/database
 
 ## Search Application
 
-Allow user to make search requests throw console input until "EXIT" word entered. On each request it outputs to console most relevant files with line numbers where words specified in request where met
+Allow user to make search requests through console input until "EXIT" word entered. On each request it outputs to console most relevant files with line numbers where words specified in request where met
 
 ### Example usage
 ```bash
