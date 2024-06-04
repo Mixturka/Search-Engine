@@ -20,7 +20,7 @@ indexer /path/to/files /path/where/to/store/database
 
 ## Search Application
 
-Allow the user to perform search queries through console input until the word "EXIT" is entered. For each search request display the most relevant files along with the line numbers where the specified words were found.
+Allow the user to perform search queries through console input until the word "EXIT" is entered. For each search request display the most relevant files along with the line numbers where the specified words were found. User request parsing was done by writing complete lexer, parser and AST.
 
 ### Example usage
 ```bash
