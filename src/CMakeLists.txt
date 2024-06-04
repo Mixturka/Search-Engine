@@ -1,0 +1,10 @@
+set(indexer_data Indexer/main.cpp Indexer/ArgParser/ArgParser.cpp Indexer/Crawler/Crawler.cpp Indexer/DataBase/BTree/BTree.cpp Indexer/DataBase/DataBase.cpp)
+set(searcher_data Searcher/main.cpp Searcher/ArgParser/ArgParser.cpp Searcher/Interpreter/Interpreter.cpp Indexer/DataBase/BTree/BTree.cpp Indexer/DataBase/DataBase.cpp Searcher/RequestParser/Expression.cpp Searcher/RequestParser/Parser.cpp Searcher/RequestParser/Scanner.cpp)
+
+add_executable(indexer ${indexer_data})
+add_executable(searhcer ${searcher_data})
+add_executable(test /Users/deniv/Documents/labwork11-Mixturka/src/tests/test.cpp Indexer/Crawler/Crawler.cpp Indexer/DataBase/BTree/BTree.cpp Indexer/DataBase/DataBase.cpp Searcher/ArgParser/ArgParser.cpp Searcher/Interpreter/Interpreter.cpp Indexer/DataBase/BTree/BTree.cpp Indexer/DataBase/DataBase.cpp Searcher/RequestParser/Expression.cpp Searcher/RequestParser/Parser.cpp Searcher/RequestParser/Scanner.cpp)
+target_link_libraries(test PRIVATE gtest_main)
+target_include_directories(test PRIVATE ${googletest_SOURCE_DIR}/googletest/include)
+include(GoogleTest)
+gtest_discover_tests(test)
