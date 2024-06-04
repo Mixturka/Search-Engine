@@ -40,7 +40,6 @@ void Interpreter::GetORScore(const std::string& term1, const std::string& term2)
   std::unordered_set<uint64_t> added_docs;
   std::vector<Data> united_v;
 
-  // Ensure all documents from posting_list1 are added
   for (const Data& data : posting_list1) {
     united_v.push_back(data);
     added_docs.insert(data.DID);
@@ -49,7 +48,6 @@ void Interpreter::GetORScore(const std::string& term1, const std::string& term2)
     }
   }
 
-  // Add documents from posting_list2 that are not already in united_v
   for (const Data& data : posting_list2) {
     if (added_docs.find(data.DID) == added_docs.end()) {
       united_v.push_back(data);
@@ -90,7 +88,6 @@ void Interpreter::GetANDScore(const std::string& term1, const std::string& term2
       if (data.DID == data2.DID) {
         united.push_back(data);
 
-        // Collect lines for term1 and term2 for the intersected document
         for (int i = 0; i < data.lines.size(); ++i) {
           this->lines_[term1][data.DID].push_back(data.lines[i]);
         }
@@ -107,7 +104,6 @@ void Interpreter::GetANDScore(const std::string& term1, const std::string& term2
     if (data.DID > max) max = data.DID;
   }
 
-  // Adjust the size of result_ to accommodate the largest DID
   if (max >= result_.size()) {
     this->result_.resize(max + 1);
   }
