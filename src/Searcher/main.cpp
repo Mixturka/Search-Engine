@@ -6,8 +6,6 @@
 
 int main(int argc, char** argv) {
   ArgParser arg_parser;
-  // argc = 2;
-  // argv = new char*("3");
   arg_parser.Parse(argc, argv);
   std::string expr;
 
