@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include "/Users/deniv/Documents/labwork11-Mixturka/src/Indexer/DataBase/DataBase.hpp"
+#include "../../Indexer/DataBase/DataBase.hpp"
 #include <queue>
 #include <map>
 
